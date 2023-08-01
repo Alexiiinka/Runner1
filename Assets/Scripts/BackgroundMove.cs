@@ -26,7 +26,6 @@ public class BackgroundMove : MonoBehaviour
     }
     void Start()
     {
-        //Application.targetFrameRate = 60;
         wall1.transform.position = wall1Start;
         wall2.transform.position = wall2Start;
         playerSc = GameObject.Find("Player").GetComponent<PlayerMovement>();
@@ -36,8 +35,6 @@ public class BackgroundMove : MonoBehaviour
         bounds = pavement1.GetComponent<MeshFilter>().mesh.bounds;
         // it needs to be translated by multiplying with localScale
         pavementSizeX =  new Vector3 (bounds.size.x * pavement1.transform.localScale.x, 0, 0);
-        // Debug.Log("Without localScale: " + bounds.size.x);
-        // Debug.Log("With localScale: " + bounds.size.x * pavement1.transform.localScale.x);
     }
 
     void Update()
@@ -45,7 +42,7 @@ public class BackgroundMove : MonoBehaviour
         if (gameOn)
         {
             EnvironmentMove();
-            scoreTxt.text = "Score: " + (Time.time - timeStart).ToString("F2");
+            scoreTxt.text = $"Score: {(Time.time - timeStart).ToString("F2")}";
         }
     }
 

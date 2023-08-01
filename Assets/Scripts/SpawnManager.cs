@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     BackgroundMove bgSc;
     int firstScore = 10;
     [SerializeField] float secondsToSpawn = 5.0f;
-    // Start is called before the first frame update
+    
     void Start()
     {
         bgSc = GameObject.Find("Manager").GetComponent<BackgroundMove>();

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ManageScenes : MonoBehaviour
 {
     static ManageScenes Instance;
+    public bool audioOn = true;
     // Start is called before the first frame update
     void Awake()
     {

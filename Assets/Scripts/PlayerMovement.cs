@@ -7,11 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     private bool onGround = true;
     private Rigidbody playerRb;
-    [Header("Gravity of  player and height of his jump")]
-    [SerializeField]
-    float gravitation = 30.0f;
-    [SerializeField]
-    int height = 800;
+    [Header("Gravity force on player and height of his jump")]
+    [SerializeField] float gravitation = 30.0f;
+    [SerializeField] int height = 800;
     [System.NonSerialized] public Animator Nanny;
     BackgroundMove bgSc;
     [SerializeField] GameObject panelRestart;
@@ -34,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && onGround && bgSc.gameOn)
         {
-            Debug.Log("nownot");
             onGround = false;
             Nanny.SetBool("onGround", false);
             playerRb.AddForce(Vector3.up*height,ForceMode.Force);

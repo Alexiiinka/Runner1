@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class searchDontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
     GameObject managDontDestr;
+    [SerializeField] Toggle toggleMusic;
     void Start()
     {
         managDontDestr = GameObject.Find("ManageDontDestroy");
+        toggleMusic.GetComponent<Toggle>().isOn = managDontDestr.GetComponent<ManageScenes>().audioOn;
     }
 
     // Update is called once per frame
@@ -18,10 +19,12 @@ public class searchDontDestroy : MonoBehaviour
         if (thisOne.isOn)
         {
             managDontDestr.GetComponent<AudioSource>().Play();
+            managDontDestr.GetComponent<ManageScenes>().audioOn = true;
         }
         else
         {
             managDontDestr.GetComponent<AudioSource>().Stop();
+            managDontDestr.GetComponent<ManageScenes>().audioOn = false;
         }
         
     }
